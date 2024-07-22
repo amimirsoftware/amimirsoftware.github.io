@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,6 +17,7 @@
             padding: 0;
             transition: background-color 0.3s, color 0.3s;
         }
+
         .container {
             width: 90%;
             max-width: 1200px;
@@ -26,6 +28,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             transition: background-color 0.3s, border-color 0.3s;
         }
+
         header {
             text-align: center;
             padding: 10px;
@@ -33,29 +36,37 @@
             color: #fff;
             border-bottom: 2px solid #000;
         }
+
         header h1 {
             margin: 0;
             font-size: 2.5em;
         }
+
         header p {
             margin: 5px 0;
             font-size: 1.2em;
         }
+
         nav {
             background-color: #000;
             color: #fff;
             padding: 10px;
             text-align: center;
         }
-        nav a, .dark-mode-toggle {
+
+        nav a,
+        .dark-mode-toggle {
             color: #fff;
             text-decoration: none;
             margin: 0 15px;
             cursor: pointer;
         }
-        nav a:hover, .dark-mode-toggle:hover {
+
+        nav a:hover,
+        .dark-mode-toggle:hover {
             text-decoration: underline;
         }
+
         .marquee {
             width: calc(100% - 0px);
             background-color: #000080;
@@ -67,20 +78,25 @@
             box-sizing: border-box;
             border: 2px solid #000;
         }
+
         .banner {
             text-align: center;
             margin: 20px 0;
         }
+
         .banner img {
             max-width: 100%;
             height: auto;
         }
+
         .main-content {
             margin: 20px 0;
         }
+
         .section {
             margin: 20px 0;
         }
+
         .section h2 {
             color: #000080;
             font-size: 1.5em;
@@ -88,13 +104,16 @@
             padding-bottom: 5px;
             margin-bottom: 10px;
         }
+
         .compatibility ul {
             list-style: disc;
             padding-left: 40px;
         }
+
         .compatibility ul li {
             margin: 5px 0;
         }
+
         .button {
             display: inline-block;
             padding: 10px 20px;
@@ -106,12 +125,15 @@
             font-weight: bold;
             border: 2px solid #000;
         }
+
         .button:hover {
             background-color: #000060;
         }
+
         .download-section {
             text-align: center;
         }
+
         footer {
             text-align: center;
             padding: 10px;
@@ -120,39 +142,79 @@
             color: #000;
             background-color: #f1f1f1;
         }
+
         /* Dark Mode Styles */
         body.dark-mode {
             background-color: #000;
             color: #fff;
         }
+
         .container.dark-mode {
             background-color: #181818;
             border-color: #444;
         }
+
         nav.dark-mode {
             background-color: #000;
         }
+
         .marquee.dark-mode {
             background-color: #000080;
             border-color: #000;
         }
+
         .section h2.dark-mode {
             color: #000080;
             border-color: #000080;
         }
+
         .button.dark-mode {
             background-color: #000080;
             border-color: #000;
         }
+
         .button.dark-mode:hover {
             background-color: #000060;
         }
+
         footer.dark-mode {
             background-color: #181818;
             color: #fff;
         }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            nav {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav a,
+            .dark-mode-toggle {
+                margin: 10px 0;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
+            .section h2 {
+                font-size: 1.2em;
+            }
+
+            .button {
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
     </style>
 </head>
+
 <body>
     <div class="container">
         <header>
@@ -230,11 +292,12 @@
         }
 
         // Load dark mode state from local storage
-        window.onload = function() {
+        window.onload = function () {
             if (localStorage.getItem('dark-mode') === 'true') {
                 toggleDarkMode();
             }
         }
     </script>
 </body>
+
 </html>
