@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="a mimir is a lightweight, portable freeware that allows you to instantly shut down or restart your PC without any loading or waiting time.">
     <meta name="keywords" content="shutdown, restart, PC, freeware, instant shutdown, instant restart, lightweight software">
     <meta name="author" content="CRYPTXMNESIA">
@@ -15,7 +14,6 @@
             color: #000;
             margin: 0;
             padding: 0;
-            transition: background-color 0.3s, color 0.3s;
         }
 
         .container {
@@ -25,8 +23,6 @@
             padding: 20px;
             background-color: #fff;
             border: 2px solid #000;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s, border-color 0.3s;
         }
 
         header {
@@ -54,39 +50,15 @@
             text-align: center;
         }
 
-        nav a,
-        .dark-mode-toggle {
+        nav a {
             color: #fff;
             text-decoration: none;
             margin: 0 15px;
             cursor: pointer;
         }
 
-        nav a:hover,
-        .dark-mode-toggle:hover {
+        nav a:hover {
             text-decoration: underline;
-        }
-
-        .marquee {
-            width: calc(100% - 0px);
-            background-color: #000080;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-            margin: 10px auto;
-            font-weight: bold;
-            box-sizing: border-box;
-            border: 2px solid #000;
-        }
-
-        .banner {
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        .banner img {
-            max-width: 100%;
-            height: auto;
         }
 
         .main-content {
@@ -142,76 +114,6 @@
             color: #000;
             background-color: #f1f1f1;
         }
-
-        /* Dark Mode Styles */
-        body.dark-mode {
-            background-color: #000;
-            color: #fff;
-        }
-
-        .container.dark-mode {
-            background-color: #181818;
-            border-color: #444;
-        }
-
-        nav.dark-mode {
-            background-color: #000;
-        }
-
-        .marquee.dark-mode {
-            background-color: #000080;
-            border-color: #000;
-        }
-
-        .section h2.dark-mode {
-            color: #000080;
-            border-color: #000080;
-        }
-
-        .button.dark-mode {
-            background-color: #000080;
-            border-color: #000;
-        }
-
-        .button.dark-mode:hover {
-            background-color: #000060;
-        }
-
-        footer.dark-mode {
-            background-color: #181818;
-            color: #fff;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            nav {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-
-            nav a,
-            .dark-mode-toggle {
-                margin: 10px 0;
-            }
-
-            header h1 {
-                font-size: 2em;
-            }
-
-            header p {
-                font-size: 1em;
-            }
-
-            .section h2 {
-                font-size: 1.2em;
-            }
-
-            .button {
-                width: 100%;
-                box-sizing: border-box;
-            }
-        }
     </style>
 </head>
 
@@ -221,15 +123,13 @@
             <h1>a mimir</h1>
             <p>Instant Shutdown/Restart Tool</p>
         </header>
-        <nav id="navbar">
+        <nav>
             <a href="#download">Download</a>
             <a href="#description">Description</a>
             <a href="#how-it-works">How It Works</a>
             <a href="#compatibility">Compatibility</a>
             <a href="#contact">Contact</a>
-            <span class="dark-mode-toggle" onclick="toggleDarkMode()">Toggle Dark Mode</span>
         </nav>
-        <div class="marquee">Welcome to the official a mimir download page!</div>
         <div class="main-content">
             <div id="download" class="section download-section">
                 <h2>Download</h2>
@@ -279,25 +179,6 @@
             <p>Thank you for using a mimir, made with &lt;3 by CRYPTXMNESIA</p>
         </footer>
     </div>
-    <script>
-        function toggleDarkMode() {
-            document.body.classList.toggle('dark-mode');
-            document.querySelector('.container').classList.toggle('dark-mode');
-            document.querySelector('nav').classList.toggle('dark-mode');
-            document.querySelectorAll('.section h2').forEach(el => el.classList.toggle('dark-mode'));
-            document.querySelector('.marquee').classList.toggle('dark-mode');
-            document.querySelectorAll('.button').forEach(el => el.classList.toggle('dark-mode'));
-            document.querySelector('footer').classList.toggle('dark-mode');
-            localStorage.setItem('dark-mode', document.body.classList.contains('dark-mode'));
-        }
-
-        // Load dark mode state from local storage
-        window.onload = function () {
-            if (localStorage.getItem('dark-mode') === 'true') {
-                toggleDarkMode();
-            }
-        }
-    </script>
 </body>
 
 </html>
