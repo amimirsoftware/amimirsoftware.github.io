@@ -17,10 +17,11 @@
             margin: 0;
             padding: 0;
             transition: background-color 0.3s, color 0.3s;
+            overflow-x: hidden;
         }
 
         .container {
-            width: 90%;
+            width: 95%;
             max-width: 1200px;
             margin: 20px auto;
             padding: 20px;
@@ -28,6 +29,8 @@
             border: 2px solid #000;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             transition: background-color 0.3s, border-color 0.3s;
+            box-sizing: border-box;
+            overflow-x: hidden;
         }
 
         header {
@@ -69,7 +72,7 @@
         }
 
         .marquee {
-            width: calc(100% - 0px);
+            width: 100%;
             background-color: #000080;
             color: #fff;
             padding: 10px;
@@ -213,6 +216,29 @@
                 box-sizing: border-box;
             }
         }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+
+            .marquee {
+                padding: 5px;
+            }
+
+            .button {
+                padding: 8px 16px;
+                font-size: 1em;
+            }
+
+            header h1 {
+                font-size: 1.5em;
+            }
+
+            header p {
+                font-size: 0.9em;
+            }
+        }
     </style>
 </head>
 
@@ -234,7 +260,10 @@
         <div class="main-content">
             <div id="download" class="section download-section">
                 <h2>Download</h2>
-                <p><a href="a mimir.exe" class="button">a mimir.exe (4.0KB)</a></p>
+                <p>
+                    <a href="a mimir.exe" class="button">a mimir.exe (4.0KB)</a>
+                    <a href="a mimir systray.exe" class="button">a mimir systray.exe (4.0KB)</a>
+                </p>
             </div>
             <div id="description" class="section description">
                 <h2>Description</h2>
